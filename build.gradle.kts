@@ -28,7 +28,6 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("jakarta.xml.bind:jakarta.xml.bind-api:3.0.1")
-    implementation("com.sun.xml.bind:jaxb-impl:3.0.1")
     implementation("javax.xml.bind:jaxb-api:2.3.1")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
@@ -36,10 +35,6 @@ dependencies {
     runtimeOnly("com.h2database:h2")
     runtimeOnly("org.postgresql:postgresql")
 
-}
-
-tasks.named<Jar>("jar") {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 tasks.withType<KotlinCompile> {
