@@ -22,7 +22,12 @@ class userController( private val userService: UserService) {
 
     @PostMapping("/signIn")
     fun signIn(@RequestBody user: SignInBodyDTO): ResponseEntity<Any> {
-        return ResponseEntity.ok(userService.signIn(user))
+        try{
+            return ResponseEntity.ok(userService.signIn(user))
+        } catch (e : Exception){
+            System.out.println(e)
+            return ResponseEntity.badRequest().body("Error signing in")
+        }
     }
 
     @GetMapping("/getUserByUsername/{username}")
