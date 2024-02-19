@@ -34,7 +34,13 @@ dependencies {
     runtimeOnly("org.glassfish.jaxb:jaxb-runtime:3.0.1")
     runtimeOnly("com.h2database:h2")
     runtimeOnly("org.postgresql:postgresql")
+}
 
+tasks.getByName<Jar>("jar") {
+    enabled = false
+    manifest {
+        attributes["Main-Class"] = "com.peretarrida.chatterapp.ChatterAppApplication"
+    }
 }
 
 tasks.withType<KotlinCompile> {
