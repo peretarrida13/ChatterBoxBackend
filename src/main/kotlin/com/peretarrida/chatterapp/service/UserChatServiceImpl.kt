@@ -23,7 +23,7 @@ class UserChatServiceImpl(
         if(user == null) throw Exception("User does not Exists")
 
         val userChatSEntities = userChatRepository.getByUser(user)
-        if(userChatSEntities.isEmpty()) throw Error("Empty List!")
+        if(userChatSEntities.isEmpty()) return ArrayList()
 
         val result = ArrayList<ChatListInfo>()
 
